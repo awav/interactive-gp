@@ -138,12 +138,9 @@ class ArcCosine(Kernel):
 
     def __post_init__(self):
         self.setup_kernel()
-
         #         def assign_order(new_value):
         #             self.kernel.order = int(new_value)
-
         #         self.kernel.order = gpflow.Parameter(0, dtype=gpflow.config.default_int())
-
         #         order = pn.widgets.Select(name="Order", value=0, options=[0, 1, 2])
         variance = pn.widgets.FloatSlider(name="Variance", value=1.0, start=1.0, end=3.0, step=1e-2)
         weight_variances = pn.widgets.FloatSlider(name="Weight variances", value=1.0, start=1e-6, end=3.0, step=1e-2)
@@ -154,7 +151,6 @@ class ArcCosine(Kernel):
         variance.param.watch(cb(self.kernel.variance), "value")
         weight_variances.param.watch(cb(self.kernel.weight_variances), "value")
         bias_variance.param.watch(cb(self.kernel.bias_variance), "value")
-
         #         self.widgets = [order, variance, weight_variances, bias_variance]
         self.widgets = [variance, weight_variances, bias_variance]
 
@@ -332,7 +328,7 @@ class SamplesViewer:
 
         title = pn.pane.Markdown("## GP samples visualization", max_height=25)
         descr = pn.pane.Markdown(
-            "_For moving x₁ and x₂ bars:_ <br>_1. turn off **pan** tool,_ <br>_2. click and move the blue dot_")
+            "_For moving x₁ and x₂ bars: 1. turn off **pan** tool, 2. click and move the orange squared point on the covariance matrix_")
         row0 = pn.Row(pn.Spacer(width=25), self.kernels_controller.view())
         row1 = samples_map * vlines_map
         row2 = pn.Row(control_vline_map, scatter_map)
