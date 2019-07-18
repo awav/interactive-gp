@@ -1,0 +1,8 @@
+dataclasses
+tf-nightly-2.0-preview
+-e git+https://github.com/GPflow/GPflow.git@a8504aa6d8102a2409aa4b85b39b26197edc7144#egg=gpflow
+bokeh
+holoviews
+panel
+tabulate
+jupyterlab
