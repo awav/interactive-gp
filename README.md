@@ -7,16 +7,16 @@ _Any contributions or ideas about visualizations which you think could be helpfu
 
 ### Implemented:
 
-* GP samples for squared exponential, matern52, matern32, matern12, arccosine 0th order and linear kernel
+* GP samples for squared exponential, matern52, matern32, matern12, arccosine 0th order and linear kernels
 
 ### Plans to add:
 
+* GPR model visualization with different kernels and ability to add new data points
 * SVGP online training, moving inducing points
-* GPR model visualization with different kernels and ability to add new points
 
 ## Install package
 
-Using conda is optinal, but still it is recommended in case you don't want to collide existing packages like TensorFlow or GPflow 
+Using conda is optional, but still it is recommended in the case when you don't want to collide with existing packages like TensorFlow or GPflow
 
 ```bash
 conda activate your-env
